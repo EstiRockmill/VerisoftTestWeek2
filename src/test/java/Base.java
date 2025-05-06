@@ -20,6 +20,7 @@ public class Base {
     protected static LogIn logIn;
     protected static Function function;
     protected static Book[] books;
+    protected static BookDetails bookDetails;
 
     @BeforeClass
     public void startSession() {
@@ -30,6 +31,7 @@ public class Base {
         driver.get(getData("Url"));
         logIn = PageFactory.initElements(driver, LogIn.class);
         function = PageFactory.initElements(driver, Function.class);
+        bookDetails=PageFactory.initElements(driver, BookDetails.class);
     }
 
     public String getData(String nodeName) {

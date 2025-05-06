@@ -1,5 +1,5 @@
+
 import org.openqa.selenium.By;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertEquals;
@@ -34,11 +34,18 @@ public class Tests extends Base
     }
 
     @Test(priority = 5)
-    public void bookDetails()
+    public void FillBookDetails()
     {
-        books = new Book[function.getBookCount()];
-
+        books = new Book[driver.findElements(By.className("rt-rt-group")).size()];
+        BookDetails.fillArr(driver.findElements(By.className("rt-rt-group")));
     }
+//    @Test(priority = 6)
+//    public void printBook()
+//    {
+//for (Book book : books){
+//    BookDetails.printArr();
+//}
+// }
 
 //    @AfterMethod
 //    public void afterMethod() throws InterruptedException {
